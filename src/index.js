@@ -1,13 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import { darkTheme } from "./themes/darktheme";
+import { SnackbarProvider } from "notistack";
+import { UIProvider } from "./context/ui/UIProvider";
+import { ClientProvider } from "./context/client/ClientProvider";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <SnackbarProvider maxSnack={3}>
+      <ClientProvider>
+        <UIProvider>
+          <ThemeProvider theme={darkTheme}>
+            <CssBaseline />
+            <App />
+          </ThemeProvider>
+        </UIProvider>
+      </ClientProvider>
+    </SnackbarProvider>
   </React.StrictMode>
 );
 
