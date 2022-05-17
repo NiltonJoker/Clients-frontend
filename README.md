@@ -1,8 +1,5 @@
 # Fronted Proyecto API Clientes
 
-## Demo
-https://clients-frontend-nilton.netlify.app/
-
 ## Inicializar Proyecto
 
 Para instalar las dependencias y correr la aplicacion:
